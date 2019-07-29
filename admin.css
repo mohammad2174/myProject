@@ -1,3 +1,13 @@
 body .test{
     margin: 0 auto;
 }
+#test2{
+    margin: 10px;
+}
+#mainImg{
+    width: 100px;
+    height: 100px;
+}
+ul{
+    padding: 0;
+}
