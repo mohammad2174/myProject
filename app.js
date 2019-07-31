@@ -1,2 +1,2 @@
-console.log('test');
-alert('test');
+console.log('test.txt');
+alert('test.txt');
