@@ -1,2 +1,2 @@
-console.log('test');
-alert('test');
+console.log('test.php');
+alert('test.php');
