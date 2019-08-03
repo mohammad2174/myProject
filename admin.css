@@ -3,6 +3,7 @@
     height: 600px;
     float: left;
     border: 2px solid #aaa;
+    display: inline-block;
 }
 #main .redSquare{
     width: 300px;
