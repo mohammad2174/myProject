@@ -1,5 +1,6 @@
-console.log('test.txt');
-alert('test.txt');
 function math(a,b){
-	return (a/b);
+	return (a*b);
+}
+function myFunction(){
+	alert("testhamkar");
 }
