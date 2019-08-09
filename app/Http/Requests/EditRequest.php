@@ -13,7 +13,7 @@ class EditRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,12 +24,12 @@ class EditRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required'=>'فیلد خالی را پرکنید',
+            'name.required'=>'فیلد نام را پرکنید',
             'name.max'=>'فیلد نام باید حداکثر 20 کاراکتر باشد',
-            'email.required'=>'فیلد خالی را پرکنید',
+            'email.required'=>'فیلد ایمیل را پرکنید',
             'email.email'=>'فیلد ایمیل غیرمجاز میباشد',
-            'passowrd.required'=>'فیلد خالی را پرکنید',
-            'passowrd.min'=>'فیلد کلمه رمز حداقل باید 16 کاراکتر باشد',
+            'password.required'=>'فیلد کلمه عبور را پرکنید',
+            'password.min'=>'فیلد کلمه عبور حداقل باید 12 کاراکتر باشد',
         ];
     }
 
@@ -38,7 +38,7 @@ class EditRequest extends FormRequest
         return [
             'name'=>'required|max:20',
             'email'=>'required|email',
-            'password'=>'required|min:16',
+            'password'=>'required|min:12',
         ];
     }
 

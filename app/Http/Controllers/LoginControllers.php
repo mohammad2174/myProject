@@ -15,18 +15,18 @@ class LoginControllers extends Controller
     }
     public function store(EditRequest $request){
 
-//        $name = $request->name;
-//        $email = $request->email;
-//        $password = $request->password;
-//
-//        $user = new User();
-//        $user->name=$name;
-//        $user->email=$email;
-//        $user->password=Hash::make($password);
-//
-//        if($user->save()){
-//            return back();
-//        }
+        $name = $request->name;
+        $email = $request->email;
+        $password = $request->password;
+
+        $user = new User();
+        $user->name=$name;
+        $user->email=$email;
+        $user->password=Hash::make($password);
+
+        if($user->save()){
+            return back();
+        }
 
     }
 }
