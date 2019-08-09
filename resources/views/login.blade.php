@@ -1,6 +1,6 @@
 @extends('layouts.layouts')
 @section('content')
-    <form action="" method="">
+    <form action="/signup" method="post">
         @csrf
         <div class="container">
         <div class="contain">
@@ -23,7 +23,15 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-info">ثبت نام در سایت</button>
                 </div>
-
+@if(count($errors)>0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+                @endforeach
+        </ul>
+    </div>
+    @endif
             </div>
         </div>
         </div>

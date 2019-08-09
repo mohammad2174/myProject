@@ -10,5 +10,6 @@
     @yield('content')
 
 <script type="text/javascript" src="js/app.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
