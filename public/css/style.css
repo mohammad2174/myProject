@@ -1,0 +1,29 @@
+@import url(app.css); /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/Iransans.eot');
+    src: url('../fonts/Iransans.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Iransans.woff2') format('woff2'),
+    url('../fonts/Iransans.woff') format('woff'),
+    url('../fonts/Iransans.ttf') format('truetype');
+url('../fonts/IRAN Sans Regular.ttf') format('truetype');
+}
+body{
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+}
+.container{
+    position: absolute;
+    right: 3%;
+    margin-top: 25px;
+}
+.contain{
+    position: relative;
+    text-align: end;
+}
+.card input{
+    text-align: right;
+}
