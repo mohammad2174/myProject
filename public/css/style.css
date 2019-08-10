@@ -15,6 +15,9 @@ body{
     font-style: normal;
     font-weight: bold;
 }
+h3{
+    text-align: center;
+}
 .container{
     position: absolute;
     right: 3%;

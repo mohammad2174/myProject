@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\EditRequest;
 use App\User;
 use Hash;
+use Mail;
 
 class LoginControllers extends Controller
 {
@@ -25,7 +26,21 @@ class LoginControllers extends Controller
         $user->password=Hash::make($password);
 
         if($user->save()){
-            return back();
+
+            $mail = array('name'=>$name);
+            Mail::send('mail', $mail, function($message) {
+                $email = \Request::input('email');
+                $name = \Request::input('name');
+                $message->to($email, $name)->subject
+                ('ثبت نام در سایت');
+                $message->from('mohammadreza.khorrami21@gmail.com','mohammadreza2174');
+            });
+            // echo "HTML Email Sent. Check your inbox.";
+            if (Mail::failures()) {
+                return "لطفا بعدا تلاش کنید";
+            }else{
+                return back();
+            }
         }
 
     }

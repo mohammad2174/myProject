@@ -10,11 +10,11 @@
                     @if($errors->first("name"))
                         <div class="alert alert-danger">{{$errors->first("name")}}</div>
                     @endif
-                    <input type="text" class="form-control" name="name" placeholder="...نام خود را در اینجا وارد کنید">
+                    <input type="text" class="form-control name" name="name" placeholder="...نام خود را در اینجا وارد کنید">
                 </div>
 
                 <div class="form-group">
-                    <label for="name">ایمیل</label>
+                    <label for="email">ایمیل</label>
                     @if($errors->first("email"))
                         <div class="alert alert-danger">{{$errors->first("email")}}</div>
                     @endif
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="name">کلمه عبور</label>
+                    <label for="password">کلمه عبور</label>
                     @if($errors->first("password"))
                         <div class="alert alert-danger">{{$errors->first("password")}}</div>
                     @endif
