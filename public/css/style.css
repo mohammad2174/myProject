@@ -18,6 +18,25 @@ body{
 h3{
     text-align: center;
 }
+table{
+    direction: rtl;
+    position: absolute;
+    top: 20%;
+}
+th,td{
+    text-align: right;
+}
+.btn-success{
+    position: absolute;
+    top: 225px;
+    right: 17%;
+    color: #000000;
+}
+.col-sm-9{
+    float: right;
+    position: fixed;
+    margin-left: -65px;
+}
 .container{
     position: absolute;
     right: 3%;

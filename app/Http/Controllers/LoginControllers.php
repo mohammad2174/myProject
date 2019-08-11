@@ -7,7 +7,7 @@ use App\Http\Requests\EditRequest;
 use App\User;
 use Hash;
 use Mail;
-
+use DB;
 class LoginControllers extends Controller
 {
     public function index(){
@@ -26,8 +26,8 @@ class LoginControllers extends Controller
         $user->password=Hash::make($password);
 
         if($user->save()){
-
-            $mail = array('name'=>$name);
+            $id =User::find($user);
+            $mail = array('name'=>$name,'id'=>$id);
             Mail::send('mail', $mail, function($message) {
                 $email = \Request::input('email');
                 $name = \Request::input('name');
@@ -35,13 +35,24 @@ class LoginControllers extends Controller
                 ('ثبت نام در سایت');
                 $message->from('mohammadreza.khorrami21@gmail.com','mohammadreza2174');
             });
-            // echo "HTML Email Sent. Check your inbox.";
+
             if (Mail::failures()) {
                 return "لطفا بعدا تلاش کنید";
             }else{
-                return back();
+                return view('signup',['name'=>$name,'email'=>$email,'password'=>$password]);
             }
         }
 
+    }
+    public function signin(){
+        $id = User::find(5);
+        return view('signin',['id'=>$id]);
+    }
+    public function result($id){
+        $user = User::where('id',$id)->update(['status'=>1]);
+        if($user){
+            $user = User::where('id',$id)->get();
+            return view('result',['user'=>$user]);
+        }
     }
 }
