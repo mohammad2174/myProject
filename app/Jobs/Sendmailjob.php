@@ -7,6 +7,8 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use App\Mail\Company;
+use DB;
 
 class Sendmailjob implements ShouldQueue
 {
@@ -29,6 +31,10 @@ class Sendmailjob implements ShouldQueue
      */
     public function handle()
     {
-        //
+        $user=DB::table('users')->where('status',1)->get();
+        $mail=$user->pluck('email');
+        foreach ($mail as $mails){
+            Mail::to($mails)->send(new Company());
+        }
     }
 }
