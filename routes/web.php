@@ -18,3 +18,5 @@ Route::get('/login','LoginControllers@index');
 Route::post('/signup','LoginControllers@store');
 Route::get('/signin','LoginControllers@signin');
 Route::get('/result/{id}','LoginControllers@result');
+Route::get('/admin','AdminControllers@index');
+Route::get('email','AdminControllers@sendemail');
